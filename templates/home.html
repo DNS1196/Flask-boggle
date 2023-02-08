@@ -1,0 +1,46 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<h1>Boggle!</h1>
+
+<section class="boggle">
+    <table class="board">
+        <tbody>
+            {%for row in board %}
+            <tr class="table-primary">
+                {%for cell in row %}
+                <td>{{cell}}</td>
+                {% endfor%}
+            </tr>
+            {% endfor%}
+        </tbody>
+    </table>
+
+    <p> High Score:
+        <b>{{ highscore }}</b>
+        in {{ nplays }} plays
+    </p>
+
+    <p>
+        Score: <b class="score">0 </b> ||
+        Seconds left: <b class="timer"></b>
+    </p>
+
+    <form method="" class="add-word">
+        <label for="word">Did you find the </label>
+        <input type="text" class="word " name="word" placeholder="word?" autofocus>
+        <button class="btn btn-primary">Submit!</button>
+    </form>
+    <br>
+
+    <p class="msg">
+
+    </p>
+
+    <ul class="words">
+
+    </ul>
+</section>
+
+{% endblock %}
